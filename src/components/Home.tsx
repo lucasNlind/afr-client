@@ -151,11 +151,13 @@ const Home = () => {
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         position: 'relative',
+                        loading: 'lazy'
                     }}
                 >
                     <img 
                         src={LogoWhite} 
                         alt="Logo" 
+                        loading='lazy'
                         style={{ 
                             width: '2.5rem', 
                             height: '2.5rem',
