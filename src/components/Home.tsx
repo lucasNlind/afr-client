@@ -1,15 +1,10 @@
-import { useState, useEffect } from "react";
-import { grey } from "@mui/material/colors";
+import { useState } from "react";
+import { ArrowOutward } from "@mui/icons-material";
 import { Box, Divider, Fade, Typography, useMediaQuery, useTheme } from "@mui/material";
 
-import LogoBlack from '../assets/logo-black.svg';
 import LogoWhite from '../assets/logo-white.svg';
-
 import DarkGradient from '../assets/gradients/dark-shell.jpeg';
-import FractalBlueGradient from '../assets/gradients/fractal-blue.jpg';
-import OrangeBlueGradient from '../assets/gradients/orange-blue.jpg';
 import YellowBlueGradient from '../assets/gradients/yellow-blue.jpg';
-import { ArrowOutward } from "@mui/icons-material";
 
 const Home = () => {
     const theme = useTheme();
@@ -39,7 +34,7 @@ const Home = () => {
                             width: '100%',
                             height: '10rem',
                             padding: '2rem',
-                            backgroundImage: `url(${theme.palette.mode === 'dark' ? OrangeBlueGradient : YellowBlueGradient})`,
+                            backgroundImage: `url(${theme.palette.mode === 'dark' ? DarkGradient : YellowBlueGradient})`,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             position: 'relative',
