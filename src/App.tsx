@@ -7,7 +7,7 @@ import { createTheme, CssBaseline, PaletteMode } from '@mui/material';
 import Home from './components/Home'
 
 function App() {
-  const [mode, setMode] = useState<PaletteMode>('light');
+  const [mode, setMode] = useState<PaletteMode>('dark');
 
   const colorMode = useMemo(
     () => ({
