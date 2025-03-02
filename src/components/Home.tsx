@@ -9,9 +9,8 @@ import YellowBlueGradient from '../assets/gradients/yellow-blue.jpg';
 const Home = () => {
     const theme = useTheme();
 
-    const [view, setView] = useState<'home' | 'events'>('home');
-
     const isMobile = useMediaQuery('(max-width:768px)');
+    const [view, setView] = useState<'home' | 'events' | 'contact'>('home');
 
     if (isMobile) {
         return (
@@ -211,6 +210,7 @@ const Home = () => {
                     </Typography>
                     <Typography
                         variant='h4'
+                        onClick={() => setView('contact')}
                         sx={{
                             borderLeft: '1px solid',
                             borderColor: theme.palette.mode === 'dark' ? 'white' : 'black',
@@ -223,9 +223,7 @@ const Home = () => {
                             }
                         }}
                     >
-                        <a style={{ textDecoration: 'none', color: 'inherit' }} href="https://forms.gle/xbV9nMLZYPqZrDg68" target="_blank" rel="noopener noreferrer">
-                            Interest form
-                        </a>
+                        Interest form
                     </Typography>
                 </Box>
             </Box>
@@ -346,7 +344,7 @@ const Home = () => {
                                             lg: '2.5rem'
                                         },
                                         color: theme.palette.mode === 'dark' ? 'white' : 'black', 
-                                        m: '0 0 1rem 0' 
+                                        m: '0 0 0.75rem 0' 
                                     }}>
                                         Coffee House
                                     </Typography>
@@ -372,7 +370,7 @@ const Home = () => {
                                             lg: '2.5rem'
                                         },
                                         color: theme.palette.mode === 'dark' ? 'white' : 'black', 
-                                        m: '0 0 1rem 0' 
+                                        m: '0 0 0.75rem 0' 
                                     }}>
                                         Happy Hour
                                     </Typography>
@@ -389,6 +387,69 @@ const Home = () => {
                                         Our quarterly happy hour events bring an opportunity for founders, investors, and operators to connect in a relaxed environment. We host these quarterly on Thursday evenings. 
                                     </Typography>
                                 </>
+                            )}
+                            {view === 'contact' && (
+                                <Box sx={{ m: '-11rem 0 0 0' }}>
+                                    <Typography sx={{ 
+                                        fontFamily: 'Italiana', 
+                                        fontSize: { 
+                                            xs: '2rem',
+                                            sm: '2rem',
+                                            md: '2.25rem', 
+                                            lg: '2.5rem'
+                                        },
+                                        color: theme.palette.mode === 'dark' ? 'white' : 'black', 
+                                        m: '0 0 0.75rem 0' 
+                                    }}>
+                                        Interest Form
+                                    </Typography>
+                                    <Typography sx={{ 
+                                        fontWeight: 300, 
+                                        m: '0 0 1rem 0', 
+                                        fontSize: {
+                                            xs: '1rem',
+                                            sm: '1.1rem',
+                                            md: '1.15rem',
+                                            lg: '1.25rem'
+                                        }, 
+                                        maxWidth: '90%' 
+                                    }}>
+                                        Interested in learning more? Fill out our&nbsp;
+                                        <Box
+                                            sx={{ 
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                cursor: 'pointer',
+                                                transition: 'all 0.2s ease',
+                                                '&:hover': {
+                                                    color: theme.palette.mode === 'dark' ? '#ff7043' : '#31BBE7',
+                                                }
+                                            }}
+                                            onClick={() => window.open('https://forms.gle/xbV9nMLZYPqZrDg68', '_blank')}
+                                        >
+                                            <Typography
+                                                sx={{
+                                                    fontWeight: 400, 
+                                                    fontSize: {
+                                                        xs: '1rem',
+                                                        sm: '1.1rem',
+                                                        md: '1.15rem',
+                                                        lg: '1.25rem'
+                                                    }
+                                                }}
+                                            >
+                                                interest form
+                                            </Typography>
+                                            <ArrowOutward 
+                                                sx={{
+                                                    fontSize: '1rem',
+                                                    m: '0.25rem 0 0 0.25rem'
+                                                }}
+                                            />
+                                        </Box>
+                                        &nbsp;to get in touch.
+                                    </Typography>
+                                </Box>
                             )}
                         </Box>
                     </Box>
